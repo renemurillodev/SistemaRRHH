@@ -45,8 +45,9 @@
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnEmpleados = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,7 +57,6 @@
             this.btnPlanilla = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.btnEmpleados = new System.Windows.Forms.Button();
             this.Fullcontainer.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -263,14 +263,6 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 600);
             this.MenuVertical.TabIndex = 1;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(0, 169);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 45);
-            this.panel5.TabIndex = 11;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
@@ -278,6 +270,30 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 45);
             this.panel4.TabIndex = 10;
+            // 
+            // btnEmpleados
+            // 
+            this.btnEmpleados.FlatAppearance.BorderSize = 0;
+            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleados.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
+            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEmpleados.Location = new System.Drawing.Point(3, 217);
+            this.btnEmpleados.Name = "btnEmpleados";
+            this.btnEmpleados.Size = new System.Drawing.Size(247, 45);
+            this.btnEmpleados.TabIndex = 12;
+            this.btnEmpleados.Text = "EMPLEADOS";
+            this.btnEmpleados.UseVisualStyleBackColor = true;
+            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(68)))), ((int)(((byte)(255)))));
+            this.panel5.Location = new System.Drawing.Point(0, 169);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 45);
+            this.panel5.TabIndex = 11;
             // 
             // panel3
             // 
@@ -376,23 +392,8 @@
             // 
             // HoraFecha
             // 
+            this.HoraFecha.Enabled = true;
             this.HoraFecha.Tick += new System.EventHandler(this.HoraFecha_Tick);
-            // 
-            // btnEmpleados
-            // 
-            this.btnEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpleados.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEmpleados.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpleados.Image")));
-            this.btnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmpleados.Location = new System.Drawing.Point(3, 217);
-            this.btnEmpleados.Name = "btnEmpleados";
-            this.btnEmpleados.Size = new System.Drawing.Size(247, 45);
-            this.btnEmpleados.TabIndex = 12;
-            this.btnEmpleados.Text = "EMPLEADOS";
-            this.btnEmpleados.UseVisualStyleBackColor = true;
-            this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
             // MainForm
             // 
