@@ -75,6 +75,9 @@
     <Compile Include="CorreosEmpleados.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Planillas_Jefes.cs">
+      <DependentUpon>LosNacimientos.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>

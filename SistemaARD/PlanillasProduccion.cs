@@ -20,9 +20,7 @@ namespace SistemaARD
         public int Horas_laboradas { get; set; }
         public decimal Anticipos { get; set; }
         public System.DateTime Fecha { get; set; }
-        public int Categoria_Id { get; set; }
     
-        public virtual CategoriasPlanillas CategoriasPlanillas { get; set; }
         public virtual Empleados Empleados { get; set; }
     }
 }

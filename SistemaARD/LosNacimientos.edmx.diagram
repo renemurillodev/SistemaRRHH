@@ -30,17 +30,18 @@
         <AssociationConnector Association="losnacimientosModel.FK_CargosEmpleados_Cargos" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_CargosEmpleados_Empleados" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_Indemnizaciones_CategoriasIndemnizaciones" ManuallyRouted="false" />
-        <AssociationConnector Association="losnacimientosModel.FK_PlanillasProduccion_CategoriasPlanillas" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_PlanillasVentas_CategoriasPlanillas" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_CorreosEmpleados_Empleados" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_Empleados_Estados" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_Empleados_Generos" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_Indemnizaciones_Empleados" ManuallyRouted="false" />
-        <AssociationConnector Association="losnacimientosModel.FK_PlanillasProduccion_Empleados" ManuallyRouted="false" />
+        <AssociationConnector ManuallyRouted="false" Association="losnacimientosModel.FK_PlanillasProduccion_Empleados" />
         <AssociationConnector Association="losnacimientosModel.FK_PlanillasVentas_Empleados" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_TelefonosEmpleados_Empleados" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_Usuarios_Roles" ManuallyRouted="false" />
         <AssociationConnector Association="losnacimientosModel.FK_TelefonosEmpleados_TiposTelefonos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="losnacimientosModel.Planillas_Jefes" Width="1.5" PointX="5.25" PointY="20.875" />
+        <AssociationConnector Association="losnacimientosModel.FK_Planillas_Jefes_Empleados" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

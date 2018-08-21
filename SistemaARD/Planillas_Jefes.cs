@@ -12,19 +12,14 @@ namespace SistemaARD
     using System;
     using System.Collections.Generic;
     
-    public partial class CategoriasPlanillas
+    public partial class Planillas_Jefes
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CategoriasPlanillas()
-        {
-            this.PlanillasVentas = new HashSet<PlanillasVentas>();
-        }
-    
         public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public int Empleado_Id { get; set; }
+        public decimal Anticipos { get; set; }
+        public decimal Salario_quincenal { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PlanillasVentas> PlanillasVentas { get; set; }
+        public virtual Empleados Empleados { get; set; }
     }
 }

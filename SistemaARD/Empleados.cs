@@ -24,6 +24,7 @@ namespace SistemaARD
             this.PlanillasProduccion = new HashSet<PlanillasProduccion>();
             this.PlanillasVentas = new HashSet<PlanillasVentas>();
             this.TelefonosEmpleados = new HashSet<TelefonosEmpleados>();
+            this.Planillas_Jefes = new HashSet<Planillas_Jefes>();
         }
     
         public int Id { get; set; }
@@ -57,5 +58,7 @@ namespace SistemaARD
         public virtual ICollection<PlanillasVentas> PlanillasVentas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TelefonosEmpleados> TelefonosEmpleados { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Planillas_Jefes> Planillas_Jefes { get; set; }
     }
 }
