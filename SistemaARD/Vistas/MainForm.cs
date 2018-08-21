@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SistemaARD.Vistas;
 
 namespace SistemaARD
 {
@@ -112,6 +113,11 @@ namespace SistemaARD
         private void btnPlanilla_Click(object sender, EventArgs e)
         {
             AbrirFormInPanel(new FPlanillas());
+        }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new ListaEmpleados());
         }
     }
 }
