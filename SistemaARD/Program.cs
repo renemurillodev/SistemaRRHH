@@ -16,7 +16,7 @@ namespace SistemaARD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vistas.ListaEmpleados());
+            Application.Run(new Vistas.RegistroEmpleados());
         }
     }
 }
