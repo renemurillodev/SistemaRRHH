@@ -35,15 +35,51 @@ namespace SistemaARD.Vistas
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             dataGridView1.AutoGenerateColumns = false;
+            string apellido = txtApellido.Text.Trim();
             using (DBEntities db = new DBEntities())
             {
-                var employee = db.Empleados.Where(a => a.Apellidos == txtApellido.Text);
-                if(employee == null)
+                
+                IQueryable<Empleados> obj = from q in db.Empleados
+                                            where q.Apellidos.Contains(apellido)
+                                            select q;
+                List<Empleados> employee = obj.ToList();
+                    
+                if (employee == null)
                 {
                     MessageBox.Show("El empleado que intenta buscar no existe");
                 }
                 else
                 {
+                    
+                    dataGridView1.DataSource = employee;
+                }
+            }
+        }
+
+        private void txtApellido_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtApellido_KeyUp(object sender, KeyEventArgs e)
+        {
+            dataGridView1.AutoGenerateColumns = false;
+            string apellido = txtApellido.Text.Trim();
+            using (DBEntities db = new DBEntities())
+            {
+
+                IQueryable<Empleados> obj = from q in db.Empleados
+                                            where q.Apellidos.Contains(apellido)
+                                            select q;
+                List<Empleados> employee = obj.ToList();
+
+                if (employee == null)
+                {
+                    MessageBox.Show("El empleado que intenta buscar no existe");
+                }
+                else
+                {
+                    
                     dataGridView1.DataSource = employee;
                 }
             }
