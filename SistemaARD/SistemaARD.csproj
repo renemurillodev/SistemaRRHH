@@ -75,10 +75,10 @@
     <Compile Include="CorreosEmpleados.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Vistas\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Vistas\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Departamentos.cs">
@@ -90,10 +90,10 @@
     <Compile Include="Estados.cs">
       <DependentUpon>LosNacimientos.tt</DependentUpon>
     </Compile>
-    <Compile Include="FPlanillas.cs">
+    <Compile Include="Vistas\FPlanillas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FPlanillas.Designer.cs">
+    <Compile Include="Vistas\FPlanillas.Designer.cs">
       <DependentUpon>FPlanillas.cs</DependentUpon>
     </Compile>
     <Compile Include="Generos.cs">
@@ -176,10 +176,10 @@
     <Compile Include="Vistas\TiposDeTelefono.Designer.cs">
       <DependentUpon>TiposDeTelefono.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="Vistas\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FPlanillas.resx">
+    <EmbeddedResource Include="Vistas\FPlanillas.resx">
       <DependentUpon>FPlanillas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Form1.resx">
