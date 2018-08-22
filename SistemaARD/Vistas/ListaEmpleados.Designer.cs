@@ -46,7 +46,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.btnPago = new System.Windows.Forms.Button();
+            this.btnCargo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(744, 324);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Id
@@ -200,6 +201,7 @@
             this.btnDetalle.TabIndex = 4;
             this.btnDetalle.Text = "Detalle";
             this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Visible = false;
             // 
             // btnEditar
             // 
@@ -209,15 +211,18 @@
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Visible = false;
             // 
-            // btnPago
+            // btnCargo
             // 
-            this.btnPago.Location = new System.Drawing.Point(671, 85);
-            this.btnPago.Name = "btnPago";
-            this.btnPago.Size = new System.Drawing.Size(85, 23);
-            this.btnPago.TabIndex = 6;
-            this.btnPago.Text = "Asignar pago";
-            this.btnPago.UseVisualStyleBackColor = true;
+            this.btnCargo.Location = new System.Drawing.Point(671, 85);
+            this.btnCargo.Name = "btnCargo";
+            this.btnCargo.Size = new System.Drawing.Size(85, 23);
+            this.btnCargo.TabIndex = 6;
+            this.btnCargo.Text = "Asignar cargo";
+            this.btnCargo.UseVisualStyleBackColor = true;
+            this.btnCargo.Visible = false;
+            this.btnCargo.Click += new System.EventHandler(this.btnCargo_Click);
             // 
             // ListaEmpleados
             // 
@@ -225,7 +230,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(228)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(770, 450);
-            this.Controls.Add(this.btnPago);
+            this.Controls.Add(this.btnCargo);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.comboBox1);
@@ -262,6 +267,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnPago;
+        private System.Windows.Forms.Button btnCargo;
     }
 }
