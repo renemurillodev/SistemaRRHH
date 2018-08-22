@@ -273,11 +273,12 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(364, 184);
+            this.lblId.Location = new System.Drawing.Point(347, 187);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(35, 13);
             this.lblId.TabIndex = 44;
             this.lblId.Text = "label1";
+            this.lblId.Visible = false;
             // 
             // RegistroEmpleados
             // 
