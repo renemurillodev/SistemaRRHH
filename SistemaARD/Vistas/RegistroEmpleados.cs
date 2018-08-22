@@ -13,6 +13,8 @@ namespace SistemaARD.Vistas
     public partial class RegistroEmpleados : Form
     {
         private Empleados empleado = new Empleados();
+        public string texto = "";
+        
         public RegistroEmpleados()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace SistemaARD.Vistas
             CargarGeneros();
             CargarAfps();
             CargarEstados();
+            lblId.Text = texto;
         }
 
         void Clear()

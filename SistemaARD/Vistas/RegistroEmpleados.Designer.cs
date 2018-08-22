@@ -53,6 +53,7 @@
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.lblApellidos = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -269,12 +270,23 @@
             this.lblNombres.TabIndex = 19;
             this.lblNombres.Text = "Nombres";
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(364, 184);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(35, 13);
+            this.lblId.TabIndex = 44;
+            this.lblId.Text = "label1";
+            this.lblId.Visible = false;
+            // 
             // RegistroEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 495);
             this.ControlBox = false;
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.cbxEstado);
             this.Controls.Add(this.dtpFechaIngreso);
@@ -309,7 +321,19 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblFechaIngreso;
+        private System.Windows.Forms.Label lblIsss;
+        private System.Windows.Forms.Label lblNup;
+        private System.Windows.Forms.Label lblNombreAFP;
+        private System.Windows.Forms.Label lblNit;
+        private System.Windows.Forms.Label lblDui;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.Label lblApellidos;
+        private System.Windows.Forms.Label lblNombres;
+        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.ComboBox cbxEstado;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
@@ -322,18 +346,6 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombres;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.Label lblFechaIngreso;
-        private System.Windows.Forms.Label lblIsss;
-        private System.Windows.Forms.Label lblNup;
-        private System.Windows.Forms.Label lblNombreAFP;
-        private System.Windows.Forms.Label lblNit;
-        private System.Windows.Forms.Label lblDui;
-        private System.Windows.Forms.Label lblGenero;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Label lblFechaNacimiento;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.Label lblApellidos;
-        private System.Windows.Forms.Label lblNombres;
     }
 }

@@ -65,5 +65,18 @@ namespace SistemaARD.Vistas
                 }
             }
         }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            RegistroEmpleados registro = new RegistroEmpleados();
+            if(dataGridView1.CurrentRow.Index != -1)
+            {
+                registro.texto = Convert.ToString(dataGridView1.CurrentRow.Cells["Id"].Value);
+
+                
+                registro.Show();
+            }
+            
+        }
     }
 }
