@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,12 @@ namespace SistemaARD.Vistas
             CargarAfps();
             CargarEstados();
             lblId.Text = texto;
+            if(texto != "")
+            {
+                LlenarTextbox();
+                btnRegistrar.Text = "Actualizar";
+                
+            }
         }
 
         void Clear()
@@ -75,6 +82,28 @@ namespace SistemaARD.Vistas
 
         }
 
+        void LlenarTextbox()
+        {
+            
+                int id = int.Parse(texto);
+                using (DBEntities db = new DBEntities())
+                {
+                    empleado = db.Empleados.Where(x => x.Id == id).FirstOrDefault();
+                    txtNombres.Text = empleado.Nombres;
+                    txtApellidos.Text = empleado.Apellidos;
+                    dtpFechaNacimiento.Value = empleado.FechaNacimiento;
+                    txtDireccion.Text = empleado.Direccion;
+                    cbxGenero.SelectedValue = empleado.Genero_Id;
+                    txtNumeroDui.Text = empleado.N_Dui;
+                    txtNumeroNit.Text = empleado.N_Nit;
+                    cbxNombreAfp.SelectedValue = empleado.Afp_Id;
+                    txtNup.Text = empleado.N_Afp;
+                    txtNumeroIsss.Text = empleado.N_Isss;
+                    dtpFechaIngreso.Value = empleado.FechaIngreso;
+                    cbxEstado.SelectedValue = empleado.Estado_Id;
+                }
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombres.Text) || string.IsNullOrEmpty(txtApellidos.Text) || string.IsNullOrEmpty(txtDireccion.Text))
@@ -83,50 +112,64 @@ namespace SistemaARD.Vistas
             }
             else
             {
-                empleado.Nombres = txtNombres.Text.Trim();
-                empleado.Apellidos = txtApellidos.Text.Trim();
-                empleado.FechaNacimiento = dtpFechaNacimiento.Value;
-                empleado.Direccion = txtDireccion.Text.Trim();
-                empleado.Genero_Id = Convert.ToInt32(cbxGenero.SelectedValue);
-                empleado.N_Dui = txtNumeroDui.Text;
-                empleado.Afp_Id = Convert.ToInt32(cbxNombreAfp.SelectedValue);
+                
+                    empleado.Nombres = txtNombres.Text.Trim();
+                    empleado.Apellidos = txtApellidos.Text.Trim();
+                    empleado.FechaNacimiento = dtpFechaNacimiento.Value;
+                    empleado.Direccion = txtDireccion.Text.Trim();
+                    empleado.Genero_Id = Convert.ToInt32(cbxGenero.SelectedValue);
+                    empleado.N_Dui = txtNumeroDui.Text;
+                    empleado.Afp_Id = Convert.ToInt32(cbxNombreAfp.SelectedValue);
 
-                empleado.N_Afp = txtNup.Text;
-                empleado.N_Isss = txtNumeroIsss.Text;
-                empleado.N_Nit = txtNumeroNit.Text;
+                    empleado.N_Afp = txtNup.Text;
+                    empleado.N_Isss = txtNumeroIsss.Text;
+                    empleado.N_Nit = txtNumeroNit.Text;
 
-                empleado.FechaIngreso = dtpFechaIngreso.Value;
-                empleado.Estado_Id = Convert.ToInt32(cbxEstado.SelectedValue);
+                    empleado.FechaIngreso = dtpFechaIngreso.Value;
+                    empleado.Estado_Id = Convert.ToInt32(cbxEstado.SelectedValue);
 
                 using (DBEntities db = new DBEntities())
                 {
-
-                    try
-                    {
-                        db.Empleados.Add(empleado);
-                        db.SaveChanges();
-                        MessageBox.Show("Datos del empleado almacenados correctamente");
-                    }
-                    catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
-                    {
-                        Exception raise = dbEx;
-                        foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    
+                        try
                         {
-                            foreach (var validationError in validationErrors.ValidationErrors)
+                            if (btnRegistrar.Text == "Registrar")
                             {
-                                string message = string.Format("{0}:{1}",
-                                    validationErrors.Entry.Entity.ToString(),
-                                    validationError.ErrorMessage);
-                                // raise a new exception nesting
-                                // the current instance as InnerException
-                                raise = new InvalidOperationException(message, raise);
+                                db.Empleados.Add(empleado);
                             }
+                            else
+                            {
+                                db.Entry(empleado).State = EntityState.Modified;
+                                texto = "";
+                                btnRegistrar.Text = "Registrar";
+                                this.Close();
+                                MainForm principal = new MainForm();
+                                principal.Show();
+                            }
+                            db.SaveChanges();
+                            MessageBox.Show("Datos del empleado almacenados correctamente");
                         }
-                        throw raise;
-                    }
+                        catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+                        {
+                            Exception raise = dbEx;
+                            foreach (var validationErrors in dbEx.EntityValidationErrors)
+                            {
+                                foreach (var validationError in validationErrors.ValidationErrors)
+                                {
+                                    string message = string.Format("{0}:{1}",
+                                        validationErrors.Entry.Entity.ToString(),
+                                        validationError.ErrorMessage);
+                                    // raise a new exception nesting
+                                    // the current instance as InnerException
+                                    raise = new InvalidOperationException(message, raise);
+                                }
+                            }
+                            throw raise;
+                        }
+                    
+                    Clear();
                 }
 
-                Clear();
             }
 
         }
