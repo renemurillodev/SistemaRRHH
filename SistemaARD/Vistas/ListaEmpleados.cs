@@ -21,6 +21,18 @@ namespace SistemaARD.Vistas
         private void ListaEmpleados_Load(object sender, EventArgs e)
         {
             CargarGrid();
+            CargarNombres();
+        }
+
+        void CargarNombres()
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                comboBox1.DataSource = db.Empleados.ToList<Empleados>();
+
+                comboBox1.DisplayMember = "NombreCompleto";
+                comboBox1.ValueMember = "Id";
+            }
         }
 
         void CargarGrid()
